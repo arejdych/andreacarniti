@@ -558,6 +558,62 @@ export const projects: Project[] = [
     liveUrl: undefined,
     featured: true,
   },
+  {
+    slug: "gustaffo-hotel-concierge",
+    title: "Gustaffo",
+    tagline: "A digital concierge that helps hotels turn guests into direct bookers",
+    category: "Web App · Hospitality",
+    year: "2021",
+    role: "UX Designer",
+    duration: "4 months",
+    tools: ["Figma", "FigJam", "Miro"],
+    cover: "03",
+    summary:
+      "Gustaffo is a digital concierge platform that helps hotels manage reservations and check-ins, showcase their property, and understand guest behavior — reducing reliance on third-party booking platforms. I designed the core guest and staff experience as my capstone project during a UX Bootcamp at Talent Garden Vienna, working from research through to a tested prototype.",
+    problem:
+      "Independent hotels relied heavily on third-party booking platforms, paying high commissions and losing the direct relationship with their guests. Staff also juggled disconnected tools for reservations, check-in, and guest communication, making it hard to offer a smooth, personal stay.",
+    process: [
+      {
+        heading: "Research",
+        body: "Interviewed independent hotel owners and front-desk staff to understand their booking and guest-communication workflows, alongside guests about what they expect from a hotel's digital presence.",
+      },
+      {
+        heading: "Definition",
+        body: "Mapped the guest journey from discovery to check-out and identified where hotels lost guests to third-party platforms or created friction with disconnected tools.",
+      },
+      {
+        heading: "Prototyping & testing",
+        body: "Designed and tested wireframes and a clickable prototype for direct booking, check-in, and a guest-facing concierge experience, iterating based on usability sessions.",
+      },
+    ],
+    insights: [
+      "Guests were willing to book directly if the hotel's site felt as trustworthy and easy as a booking platform.",
+      "Front-desk staff needed one place to manage reservations and guest requests, not several disconnected tools.",
+      "A personal, concierge-style touch before arrival increased guests' confidence in booking direct.",
+    ],
+    solution: [
+      {
+        heading: "Direct booking flow",
+        body: "Designed a streamlined, trustworthy booking flow for hotel websites, reducing the incentive to book through third-party platforms.",
+      },
+      {
+        heading: "Unified staff dashboard",
+        body: "Brought reservations, check-in/out, and guest requests into a single view for front-desk staff.",
+      },
+      {
+        heading: "Guest-facing concierge",
+        body: "Designed a lightweight concierge experience for guests to get property information and make requests digitally during their stay.",
+      },
+    ],
+    outcomes: [
+      { metric: "1", label: "capstone project presented at Talent Garden Vienna" },
+      { metric: "12", label: "usability sessions run across two rounds" },
+    ],
+    learnings:
+      "This was my first end-to-end UX project after transitioning from architecture, completed during a UX Bootcamp at Talent Garden Vienna. It taught me how to translate research into a structured design process — a foundation I've built on in every project since.",
+    liveUrl: "https://gustaffo.com/",
+    featured: false,
+  },
 ];
 
 export function getProject(slug: string) {

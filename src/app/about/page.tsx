@@ -62,8 +62,6 @@ const education = [
     org: "Talent Garden Vienna",
     country: "Austria",
     url: "https://talentgarden.org/",
-    note: "Capstone project: Gustaffo, a digital concierge platform for hotel guests.",
-    noteUrl: "https://gustaffo.com/",
   },
   {
     period: "2015 — 2017",
@@ -263,42 +261,27 @@ export default function AboutPage() {
         </h2>
         <div className="mt-8 divide-y divide-border rounded-xl border border-border bg-card/40 px-6">
           {education.map((e) => (
-            <div key={`${e.org}-${e.degree}`} className="flex flex-col gap-1 py-5">
-              <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                <div>
-                  <p className="font-medium">{e.degree}</p>
-                  <p className="text-sm text-muted-foreground">
-                    <a
-                      href={e.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline underline-offset-4 hover:text-foreground"
-                    >
-                      {e.org}
-                    </a>{" "}
-                    · {e.country}
-                  </p>
-                </div>
-                <p className="font-mono text-sm text-muted-foreground">
-                  {e.period}
+            <div
+              key={`${e.org}-${e.degree}`}
+              className="flex flex-col gap-1 py-5 sm:flex-row sm:items-center sm:justify-between"
+            >
+              <div>
+                <p className="font-medium">{e.degree}</p>
+                <p className="text-sm text-muted-foreground">
+                  <a
+                    href={e.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-4 hover:text-foreground"
+                  >
+                    {e.org}
+                  </a>{" "}
+                  · {e.country}
                 </p>
               </div>
-              {e.note && (
-                <p className="text-xs text-muted-foreground/80">
-                  {e.noteUrl ? (
-                    <a
-                      href={e.noteUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline underline-offset-4 hover:text-foreground"
-                    >
-                      {e.note}
-                    </a>
-                  ) : (
-                    e.note
-                  )}
-                </p>
-              )}
+              <p className="font-mono text-sm text-muted-foreground">
+                {e.period}
+              </p>
             </div>
           ))}
         </div>
