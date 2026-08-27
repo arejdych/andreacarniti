@@ -171,7 +171,7 @@ export default function AboutPage() {
               nativeButton={false}
               render={
                 <a
-                  href={`${process.env.GITHUB_PAGES === "true" ? "/andreacarniti" : ""}/aneta-rey-resume.pdf`}
+                  href={`${process.env.GITHUB_PAGES === "true" ? "/andreacarniti" : ""}/andrea-carniti-resume.pdf`}
                   download
                 >
                   Download résumé
