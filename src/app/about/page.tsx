@@ -58,7 +58,7 @@ const experience = [
       "Designed the guest and staff experience for a digital concierge platform helping hotels manage reservations and check-ins, showcase their property, and understand guest behavior — reducing reliance on third-party booking platforms.",
   },
   {
-    period: "2016 — 2021",
+    period: "2015 — 2021",
     role: "Architect",
     org: "Lorenzateliers",
     location: "Vienna, Austria",
