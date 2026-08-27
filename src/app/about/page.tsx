@@ -58,20 +58,16 @@ const experience = [
       "Designed the guest and staff experience for a digital concierge platform helping hotels manage reservations and check-ins, showcase their property, and understand guest behavior — reducing reliance on third-party booking platforms.",
   },
   {
-    period: "2016 — 2023",
+    period: "2016 — 2021",
     role: "Architect",
     org: "Lorenzateliers",
     location: "Vienna, Austria",
-    description:
-      "Worked as an architect for over seven years, designing buildings and spaces with a human-centered approach — experience that continues to shape how I approach digital product design today.",
   },
   {
-    period: "2014",
+    period: "2013",
     role: "Junior Architect",
     org: "JLCG Carrilho da Graça Arquitectos",
     location: "Lisbon, Portugal",
-    description:
-      "Worked as a junior architect on residential and public building projects.",
   },
 ];
 
