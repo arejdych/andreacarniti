@@ -2,11 +2,10 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/site/container";
-import { ImageBlock } from "@/components/site/image-block";
+import { PhotoCarousel } from "@/components/site/photo-carousel";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 export const metadata: Metadata = {
   title: "About — Andrea Carniti",
@@ -21,12 +20,7 @@ const experience = [
     org: "Baiond",
     url: "https://baiond.io/",
     description:
-      "A cloud platform turning sensor, camera, and satellite data into one live view — helping cities, infrastructure, and agriculture act on real-time insight instead of raw numbers.",
-    responsibilities: [
-      "Owned end-to-end UX across research, IA, interaction, and visual design",
-      "Built and maintained the design system powering every industry vertical",
-      "Shaped product strategy and roadmap directly with founders and engineers",
-    ],
+      "Designed a cloud platform turning sensor, camera, and satellite data into one live view for cities, infrastructure, and agriculture — owning end-to-end UX, the design system, and product strategy alongside the founders and engineers.",
   },
   {
     period: "2022 — 2023",
@@ -34,24 +28,29 @@ const experience = [
     org: "Cheerin'",
     url: "https://www.cheerin.app/",
     description:
-      "A mobile app helping friend groups settle on plans instead of endless group-chat back-and-forth, through polling, scheduling, and venue-discovery flows.",
-    responsibilities: [
-      "Led end-to-end design for polling, scheduling, and venue-discovery flows",
-      "Ran user research and usability testing to reduce plan drop-off",
-      "Partnered closely with two engineers and the founder to ship fast",
-    ],
+      "Led design for a mobile app helping friend groups settle on plans through polling, scheduling, and venue-discovery flows, running user research and usability testing alongside two engineers and the founder.",
   },
   {
     period: "2021 — 2022",
     role: "UX Designer",
-    org: "Infable Development",
+    org: "Energy Efficiency Directive solution",
     description:
-      "A web and mobile platform turning building energy and utility sensor data into actionable insights for facility managers.",
-    responsibilities: [
-      "Redesigned the core monitoring dashboard around real daily decisions",
-      "Conducted contextual research, shadowing facility managers on live shifts",
-      "Collaborated with a product manager and two engineers on delivery",
-    ],
+      "Redesigned the core monitoring dashboard for a building-energy platform, conducting contextual research with facility managers and collaborating with a product manager and two engineers on delivery.",
+  },
+  {
+    period: "2021",
+    role: "UX Designer",
+    org: "Financial Pilot",
+    description:
+      "Designed an app equipping users with the tools to effectively manage and invest their finances.",
+  },
+  {
+    period: "2021",
+    role: "UX Designer",
+    org: "Gustaffo",
+    url: "https://gustaffo.com/",
+    description:
+      "Designed the guest and staff experience for a digital concierge platform helping hotels manage reservations and check-ins, showcase their property, and understand guest behavior — reducing reliance on third-party booking platforms.",
   },
 ];
 
@@ -108,23 +107,39 @@ const otherCourses = [
   },
 ];
 
-const skills = [
-  "User research",
-  "Information architecture",
-  "Wireframing & prototyping",
-  "Usability testing",
-  "Design systems",
-  "Interaction design",
-  "Stakeholder facilitation",
-];
-
-const tools = [
-  "Figma",
-  "Adobe Suite",
-  "Jira",
-  "Confluence",
-  "VS Code + LLMs",
-  "Antigravity",
+const skillGroups = [
+  {
+    name: "Design",
+    items: [
+      "Product design",
+      "User research",
+      "Prototyping",
+      "Interaction design",
+      "Design systems",
+      "Figma",
+      "Adobe Suite",
+    ],
+  },
+  {
+    name: "Dev",
+    items: [
+      "VS Code + LLMs",
+      "Antigravity",
+      "Claude Code",
+      "Cursor",
+      "GitHub",
+      "Tailwind",
+      "shadcn/ui",
+    ],
+  },
+  {
+    name: "Product Management",
+    items: ["Jira", "Confluence", "Stakeholder mgmt"],
+  },
+  {
+    name: "Domains",
+    items: ["B2B", "Proptech", "IoT", "Social", "Hospitality", "Fintech"],
+  },
 ];
 
 const languages = [
@@ -137,11 +152,20 @@ const languages = [
 export default function AboutPage() {
   return (
     <>
-      <Container className="grid gap-12 py-20 md:grid-cols-[1fr_1.1fr] md:gap-16">
-        <div>
-          <AspectRatio ratio={3 / 4}>
-            <ImageBlock tone="02" label="Portrait" className="h-full w-full" />
-          </AspectRatio>
+      <Container className="max-w-[900px] grid gap-12 py-20 md:grid-cols-[240px_1fr] md:gap-16">
+        <div className="w-[240px]">
+          <PhotoCarousel
+            slides={[
+              {
+                src: `${process.env.GITHUB_PAGES === "true" ? "/andreacarniti" : ""}/images/andrea.jpg`,
+                alt: "Andrea Carniti",
+              },
+              {
+                src: `${process.env.GITHUB_PAGES === "true" ? "/andreacarniti" : ""}/images/andrea-fun.png`,
+                alt: "Andrea Carniti on the Cheerin' team",
+              },
+            ]}
+          />
         </div>
 
         <div>
@@ -170,11 +194,13 @@ export default function AboutPage() {
             <p>
               My background is in architecture, where I had the privilege
               of studying under acclaimed architects such as Zaha Hadid at
-              the University of Applied Arts Vienna. I&apos;ve come to see
-              architecture and UX design as fundamentally alike: both put
-              a human being at the center and hold that person&apos;s
-              experience to the highest standard — one shaping the
-              physical world, the other the digital one.
+              the University of Applied Arts Vienna.
+            </p>
+            <p>
+              I&apos;ve come to see architecture and UX design as
+              fundamentally alike: both put a human being at the center and
+              hold that person&apos;s experience to the highest standard —
+              one shaping the physical world, the other the digital one.
             </p>
           </div>
 
@@ -206,46 +232,36 @@ export default function AboutPage() {
       <Separator />
 
       {/* Experience */}
-      <Container className="py-20">
+      <Container className="max-w-[900px] py-20">
         <h2 className="text-3xl font-medium tracking-tight sm:text-4xl">
           Experience
         </h2>
-        <div className="mt-8 divide-y divide-border rounded-xl border border-border bg-card/40 px-6">
+        <div className="relative mt-10 border-l border-border pl-8">
           {experience.map((e) => (
-            <div key={e.org} className="flex flex-col gap-3 py-5">
-              <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                <div>
-                  <p className="font-medium">{e.role}</p>
-                  <p className="text-sm text-muted-foreground">
-                    {e.url ? (
-                      <a
-                        href={e.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline underline-offset-4 hover:text-foreground"
-                      >
-                        {e.org}
-                      </a>
-                    ) : (
-                      e.org
-                    )}
-                  </p>
-                </div>
-                <p className="font-mono text-sm text-muted-foreground">
-                  {e.period}
-                </p>
-              </div>
+            <div key={e.org} className="relative pb-12 last:pb-0">
+              <span className="absolute -left-[calc(2rem+4.5px)] top-1.5 size-2.5 rounded-full border-2 border-background bg-foreground" />
+              <p className="font-mono text-xs uppercase tracking-wide text-muted-foreground">
+                {e.period}
+              </p>
+              <p className="mt-1.5 font-medium">{e.role}</p>
+              <p className="text-sm text-muted-foreground">
+                {e.url ? (
+                  <a
+                    href={e.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-4 hover:text-foreground"
+                  >
+                    {e.org}
+                  </a>
+                ) : (
+                  e.org
+                )}
+              </p>
               {e.description && (
-                <p className="text-sm text-muted-foreground">
+                <p className="mt-2 max-w-[80ch] text-sm text-muted-foreground">
                   {e.description}
                 </p>
-              )}
-              {e.responsibilities && (
-                <ul className="list-disc space-y-1 pl-5 text-sm text-muted-foreground">
-                  {e.responsibilities.map((r) => (
-                    <li key={r}>{r}</li>
-                  ))}
-                </ul>
               )}
             </div>
           ))}
@@ -255,32 +271,28 @@ export default function AboutPage() {
       <Separator />
 
       {/* Education */}
-      <Container className="py-20">
+      <Container className="max-w-[900px] py-20">
         <h2 className="text-3xl font-medium tracking-tight sm:text-4xl">
           Education
         </h2>
-        <div className="mt-8 divide-y divide-border rounded-xl border border-border bg-card/40 px-6">
+        <div className="relative mt-10 border-l border-border pl-8">
           {education.map((e) => (
-            <div
-              key={`${e.org}-${e.degree}`}
-              className="flex flex-col gap-1 py-5 sm:flex-row sm:items-center sm:justify-between"
-            >
-              <div>
-                <p className="font-medium">{e.degree}</p>
-                <p className="text-sm text-muted-foreground">
-                  <a
-                    href={e.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline underline-offset-4 hover:text-foreground"
-                  >
-                    {e.org}
-                  </a>{" "}
-                  · {e.country}
-                </p>
-              </div>
-              <p className="font-mono text-sm text-muted-foreground">
+            <div key={`${e.org}-${e.degree}`} className="relative pb-10 last:pb-0">
+              <span className="absolute -left-[calc(2rem+4.5px)] top-1.5 size-2.5 rounded-full border-2 border-background bg-foreground" />
+              <p className="font-mono text-xs uppercase tracking-wide text-muted-foreground">
                 {e.period}
+              </p>
+              <p className="mt-1.5 font-medium">{e.degree}</p>
+              <p className="text-sm text-muted-foreground">
+                <a
+                  href={e.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-4 hover:text-foreground"
+                >
+                  {e.org}
+                </a>{" "}
+                · {e.country}
               </p>
             </div>
           ))}
@@ -290,7 +302,7 @@ export default function AboutPage() {
       <Separator />
 
       {/* Other courses */}
-      <Container className="py-20">
+      <Container className="max-w-[900px] py-20">
         <h2 className="text-3xl font-medium tracking-tight sm:text-4xl">
           Other courses
         </h2>
@@ -320,54 +332,45 @@ export default function AboutPage() {
 
       <Separator />
 
-      {/* Skills & tools */}
-      <Container className="grid gap-12 py-20 sm:grid-cols-2">
-        <div>
-          <h2 className="font-mono text-sm uppercase tracking-wide text-muted-foreground">
-            Skills
-          </h2>
-          <div className="mt-6 flex flex-wrap gap-2">
-            {skills.map((s) => (
-              <Badge key={s} variant="secondary">
-                {s}
-              </Badge>
-            ))}
-          </div>
-        </div>
-        <div>
-          <h2 className="font-mono text-sm uppercase tracking-wide text-muted-foreground">
-            Tools
-          </h2>
-          <div className="mt-6 flex flex-wrap gap-2">
-            {tools.map((t) => (
-              <Badge key={t} variant="outline">
-                {t}
-              </Badge>
-            ))}
-          </div>
-        </div>
-      </Container>
-
-      <Separator />
-
-      {/* Languages */}
-      <Container className="py-20">
-        <h2 className="font-mono text-sm uppercase tracking-wide text-muted-foreground">
-          Languages
+      {/* Skills & languages */}
+      <Container className="max-w-[900px] py-20">
+        <h2 className="text-3xl font-medium tracking-tight sm:text-4xl">
+          Skills
         </h2>
-        <div className="mt-6 flex flex-wrap gap-2">
-          {languages.map((l) => (
-            <Badge key={l.name} variant="secondary">
-              {l.name} · {l.level}
-            </Badge>
+        <div className="mt-10 grid gap-12 sm:grid-cols-2">
+          {skillGroups.map((group) => (
+            <div key={group.name}>
+              <h3 className="font-mono text-sm uppercase tracking-wide text-muted-foreground">
+                {group.name}
+              </h3>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {group.items.map((item) => (
+                  <Badge key={item} variant="secondary">
+                    {item}
+                  </Badge>
+                ))}
+              </div>
+            </div>
           ))}
+        </div>
+        <div className="mt-12">
+          <h3 className="font-mono text-sm uppercase tracking-wide text-muted-foreground">
+            Languages
+          </h3>
+          <div className="mt-6 flex flex-wrap gap-2">
+            {languages.map((l) => (
+              <Badge key={l.name} variant="secondary">
+                {l.name} · {l.level}
+              </Badge>
+            ))}
+          </div>
         </div>
       </Container>
 
       <Separator />
 
       {/* Currently reading */}
-      <Container className="py-20">
+      <Container className="max-w-[900px] py-20">
         <h2 className="text-3xl font-medium tracking-tight sm:text-4xl">
           What I&apos;m recently reading &amp; watching
         </h2>
@@ -375,14 +378,8 @@ export default function AboutPage() {
           <div className="rounded-xl border border-border bg-card/40 p-6">
             <p className="font-medium">Jeff Gothelf&apos;s Substack</p>
             <p className="mt-2 text-sm text-muted-foreground">
-              Jeff Gothelf is an author, speaker, and product management
-              expert best known for co-authoring <em>Lean UX</em>,{" "}
-              <em>Sense &amp; Respond</em>, and{" "}
-              <em>Who Does What by How Much?</em> He also co-founded Sense
-              &amp; Respond Press. His writing pushes teams toward outcome-
-              driven, evidence-based product practice — a perspective I
-              find especially useful for design systems and complex
-              applications.
+              Co-author of <em>Lean UX</em> and <em>Sense &amp; Respond</em>,
+              writing on outcome-driven, evidence-based product practice.
             </p>
             <a
               href="https://substack.com/@jeffgothelf"
@@ -396,12 +393,8 @@ export default function AboutPage() {
           <div className="rounded-xl border border-border bg-card/40 p-6">
             <p className="font-medium">David Hoang&apos;s Substack</p>
             <p className="mt-2 text-sm text-muted-foreground">
-              David Hoang is VP of Design at Atlassian, where he leads
-              design for the company&apos;s enterprise products. On{" "}
-              <em>Proof of Concept</em>, he writes candidly about scaling
-              design teams, building design systems, and the realities of
-              leading design inside a large product organization — insights
-              I regularly draw on for my own systems and enterprise work.
+              VP of Design at Atlassian, writing candidly about scaling
+              design teams and design systems on <em>Proof of Concept</em>.
             </p>
             <a
               href="https://www.proofofconcept.pub/"
@@ -417,12 +410,8 @@ export default function AboutPage() {
               Jenny Wen: &quot;The Design Process Is Dead&quot;
             </p>
             <p className="mt-2 text-sm text-muted-foreground">
-              Jenny Wen is a product designer known for her work at Figma,
-              where she led projects spanning notifications, Figma Make,
-              and the Figma Agent. In this talk, she challenges designers
-              to rethink rigid design processes in an era of AI-assisted
-              product development — a conversation that resonates with how
-              I approach my own workflow today.
+              Former Figma designer challenging designers to rethink rigid
+              process in an era of AI-assisted product development.
             </p>
             <a
               href="https://www.youtube.com/watch?v=4u94juYwLLM"
@@ -438,7 +427,7 @@ export default function AboutPage() {
 
       <Separator />
 
-      <Container className="py-20">
+      <Container className="max-w-[900px] py-20">
         <div className="glow-bg flex flex-col items-center gap-6 rounded-2xl border border-border bg-card/40 px-8 py-16 text-center">
           <h2 className="max-w-xl text-balance text-2xl font-medium tracking-tight sm:text-3xl">
             Want to see the work behind the résumé?

@@ -1,12 +1,11 @@
 import Link from "next/link";
-import { ArrowUpRight, MapPin, Clock } from "lucide-react";
+import { ArrowUpRight, MapPin } from "lucide-react";
 import { CopyEmailButton } from "@/app/contact/copy-email-button";
 
-const EMAIL = "hello@anetarey.com";
+const EMAIL = "and.carniti@gmail.com";
 
 const details = [
-  { icon: MapPin, label: "Warsaw, Poland · works with EU & US teams" },
-  { icon: Clock, label: "Usually replies within 1–2 business days" },
+  { icon: MapPin, label: "Vienna, Austria" },
 ];
 
 /**

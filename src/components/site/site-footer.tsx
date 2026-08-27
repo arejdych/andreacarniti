@@ -8,7 +8,7 @@ export function SiteFooter() {
     <footer className="border-t border-border">
       <Container className="flex flex-col gap-6 py-10 md:flex-row md:items-center md:justify-between">
         <div>
-          <p className="font-mono text-sm font-semibold">A. REY</p>
+          <p className="font-mono text-sm font-semibold">Andrea Carniti</p>
           <p className="mt-1 text-sm text-muted-foreground">
             UX designer crafting clear, usable products.
           </p>
@@ -26,8 +26,8 @@ export function SiteFooter() {
               {s.label}
             </a>
           ))}
-          <Link href="mailto:hello@anetarey.com" className="hover:text-foreground">
-            hello@anetarey.com
+          <Link href="mailto:and.carniti@gmail.com" className="hover:text-foreground">
+            and.carniti@gmail.com
           </Link>
         </nav>
 

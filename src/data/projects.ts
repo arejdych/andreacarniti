@@ -503,7 +503,7 @@ export const projects: Project[] = [
   },
   {
     slug: "comgy-energy-platform",
-    title: "Infable Development",
+    title: "Energy Efficiency Directive solution",
     tagline: "Turning raw building-sensor data into decisions facility managers can act on",
     category: "Web App · Mobile App · PropTech",
     year: "2021-2022",
@@ -512,7 +512,7 @@ export const projects: Project[] = [
     tools: ["Figma", "FigJam", "UserTesting", "Amplitude"],
     cover: "02",
     summary:
-      "Infable Development's platform turns building energy and utility sensor data into actionable insights for facility managers. I redesigned the core monitoring dashboard around real decisions managers make daily, working alongside a product manager and two engineers.",
+      "The Energy Efficiency Directive solution turns building energy and utility sensor data into actionable insights for facility managers. I redesigned the core monitoring dashboard around real decisions managers make daily, working alongside a product manager and two engineers.",
     problem:
       "Facility managers could see raw sensor readings but struggled to tell what needed action versus what was normal fluctuation. Support tickets showed users didn't trust alerts enough to act on them without double-checking manually.",
     process: [
