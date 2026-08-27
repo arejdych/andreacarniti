@@ -18,6 +18,7 @@ const experience = [
     period: "2023 — Ongoing",
     role: "Lead & Sole Product Designer",
     org: "Baiond",
+    location: "Vienna, Austria",
     url: "https://baiond.io/",
     description:
       "Designed a cloud platform turning sensor, camera, and satellite data into one live view for cities, infrastructure, and agriculture — owning end-to-end UX, the design system, and product strategy alongside the founders and engineers.",
@@ -26,6 +27,7 @@ const experience = [
     period: "2022 — 2023",
     role: "Lead Product Designer",
     org: "Cheerin'",
+    location: "Vienna, Austria",
     url: "https://www.cheerin.app/",
     description:
       "Led design for a mobile app helping friend groups settle on plans through polling, scheduling, and venue-discovery flows, running user research and usability testing alongside two engineers and the founder.",
@@ -34,6 +36,7 @@ const experience = [
     period: "2021 — 2022",
     role: "UX Designer",
     org: "Energy Efficiency Directive solution",
+    location: "Vienna, Austria",
     description:
       "Redesigned the core monitoring dashboard for a building-energy platform, conducting contextual research with facility managers and collaborating with a product manager and two engineers on delivery.",
   },
@@ -41,6 +44,7 @@ const experience = [
     period: "2021",
     role: "UX Designer",
     org: "Financial Pilot",
+    location: "Vienna, Austria",
     description:
       "Designed an app equipping users with the tools to effectively manage and invest their finances.",
   },
@@ -48,9 +52,26 @@ const experience = [
     period: "2021",
     role: "UX Designer",
     org: "Gustaffo",
+    location: "Vienna, Austria",
     url: "https://gustaffo.com/",
     description:
       "Designed the guest and staff experience for a digital concierge platform helping hotels manage reservations and check-ins, showcase their property, and understand guest behavior — reducing reliance on third-party booking platforms.",
+  },
+  {
+    period: "2016 — 2023",
+    role: "Architect",
+    org: "Lorenzateliers",
+    location: "Vienna, Austria",
+    description:
+      "Worked as an architect for over seven years, designing buildings and spaces with a human-centered approach — experience that continues to shape how I approach digital product design today.",
+  },
+  {
+    period: "2014",
+    role: "Junior Architect",
+    org: "JLCG Carrilho da Graça Arquitectos",
+    location: "Lisbon, Portugal",
+    description:
+      "Worked as a junior architect on residential and public building projects.",
   },
 ];
 
@@ -257,6 +278,7 @@ export default function AboutPage() {
                 ) : (
                   e.org
                 )}
+                {e.location ? ` · ${e.location}` : ""}
               </p>
               {e.description && (
                 <p className="mt-2 max-w-[80ch] text-sm text-muted-foreground">
