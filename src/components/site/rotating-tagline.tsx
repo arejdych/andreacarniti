@@ -7,7 +7,7 @@ const phrases = [
   "I define direction",
   "I design",
   "I vibe code",
-  "I ship",
+  "I build",
   "I measure",
 ];
 const ROW_EM = 1.15;
