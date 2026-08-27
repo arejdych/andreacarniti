@@ -20,17 +20,38 @@ const experience = [
     role: "Lead & Sole Product Designer",
     org: "Baiond",
     url: "https://baiond.io/",
+    description:
+      "A cloud platform turning sensor, camera, and satellite data into one live view — helping cities, infrastructure, and agriculture act on real-time insight instead of raw numbers.",
+    responsibilities: [
+      "Owned end-to-end UX across research, IA, interaction, and visual design",
+      "Built and maintained the design system powering every industry vertical",
+      "Shaped product strategy and roadmap directly with founders and engineers",
+    ],
   },
   {
     period: "2022 — 2023",
     role: "Lead Product Designer",
     org: "Cheerin'",
     url: "https://www.cheerin.app/",
+    description:
+      "A mobile app helping friend groups settle on plans instead of endless group-chat back-and-forth, through polling, scheduling, and venue-discovery flows.",
+    responsibilities: [
+      "Led end-to-end design for polling, scheduling, and venue-discovery flows",
+      "Ran user research and usability testing to reduce plan drop-off",
+      "Partnered closely with two engineers and the founder to ship fast",
+    ],
   },
   {
     period: "2021 — 2022",
     role: "UX Designer",
     org: "Infable Development",
+    description:
+      "A web and mobile platform turning building energy and utility sensor data into actionable insights for facility managers.",
+    responsibilities: [
+      "Redesigned the core monitoring dashboard around real daily decisions",
+      "Conducted contextual research, shadowing facility managers on live shifts",
+      "Collaborated with a product manager and two engineers on delivery",
+    ],
   },
 ];
 
@@ -191,30 +212,41 @@ export default function AboutPage() {
         </h2>
         <div className="mt-8 divide-y divide-border rounded-xl border border-border bg-card/40 px-6">
           {experience.map((e) => (
-            <div
-              key={e.org}
-              className="flex flex-col gap-1 py-5 sm:flex-row sm:items-center sm:justify-between"
-            >
-              <div>
-                <p className="font-medium">{e.role}</p>
-                <p className="text-sm text-muted-foreground">
-                  {e.url ? (
-                    <a
-                      href={e.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline underline-offset-4 hover:text-foreground"
-                    >
-                      {e.org}
-                    </a>
-                  ) : (
-                    e.org
-                  )}
+            <div key={e.org} className="flex flex-col gap-3 py-5">
+              <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <p className="font-medium">{e.role}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {e.url ? (
+                      <a
+                        href={e.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline underline-offset-4 hover:text-foreground"
+                      >
+                        {e.org}
+                      </a>
+                    ) : (
+                      e.org
+                    )}
+                  </p>
+                </div>
+                <p className="font-mono text-sm text-muted-foreground">
+                  {e.period}
                 </p>
               </div>
-              <p className="font-mono text-sm text-muted-foreground">
-                {e.period}
-              </p>
+              {e.description && (
+                <p className="text-sm text-muted-foreground">
+                  {e.description}
+                </p>
+              )}
+              {e.responsibilities && (
+                <ul className="list-disc space-y-1 pl-5 text-sm text-muted-foreground">
+                  {e.responsibilities.map((r) => (
+                    <li key={r}>{r}</li>
+                  ))}
+                </ul>
+              )}
             </div>
           ))}
         </div>
