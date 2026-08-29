@@ -1,3 +1,3 @@
 export function assetPath(path: string) {
-  return path;
+  return `${process.env.GITHUB_PAGES === "true" ? "/andreacarniti" : ""}${path}`;
 }
