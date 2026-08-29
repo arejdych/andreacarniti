@@ -15,9 +15,11 @@ const details = [
 export function ContactBlock({
   animate = true,
   startDelay = 0,
+  showLocation = true,
 }: {
   animate?: boolean;
   startDelay?: number;
+  showLocation?: boolean;
 }) {
   const anim = animate ? "blur-in" : "";
   const delayStyle = (ms: number) => ({
@@ -46,17 +48,19 @@ export function ContactBlock({
         <CopyEmailButton email={EMAIL} />
       </div>
 
-      <ul
-        className={`${anim} mt-8 flex flex-col items-center gap-3 text-sm text-muted-foreground sm:flex-row sm:gap-6`}
-        style={delayStyle(420)}
-      >
-        {details.map((d) => (
-          <li key={d.label} className="flex items-center gap-2">
-            <d.icon className="size-4 shrink-0" />
-            {d.label}
-          </li>
-        ))}
-      </ul>
+      {showLocation && (
+        <ul
+          className={`${anim} mt-8 flex flex-col items-center gap-3 text-sm text-muted-foreground sm:flex-row sm:gap-6`}
+          style={delayStyle(420)}
+        >
+          {details.map((d) => (
+            <li key={d.label} className="flex items-center gap-2">
+              <d.icon className="size-4 shrink-0" />
+              {d.label}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }

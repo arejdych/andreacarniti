@@ -72,16 +72,15 @@ export default function Home() {
       </section>
 
       {/* About teaser */}
-      <section className="pt-8 pb-4">
+      <section className="py-20">
         <Container>
-          <div className="grid gap-10 rounded-2xl border border-border bg-card/40 p-10 md:grid-cols-[1fr_1.2fr] md:gap-16 md:p-14">
-            <div>
-              <p className="font-mono text-sm text-muted-foreground">About</p>
-              <h2 className="mt-2 text-2xl font-medium tracking-tight sm:text-3xl">
-                Research-driven, detail-obsessed, allergic to clutter.
+          <div className="grid gap-10 border-y border-border py-12 md:grid-cols-[1fr_1.5fr] md:gap-20 md:py-16">
+            <div className="flex items-start">
+              <h2 className="text-2xl font-medium tracking-tight sm:text-3xl">
+                About me
               </h2>
             </div>
-            <div className="space-y-4 text-muted-foreground">
+            <div className="max-w-2xl space-y-4 text-base leading-relaxed text-muted-foreground">
               <p>
                 I&apos;m a product designer with experience across consumer
                 and business web and mobile apps. I approach every project
@@ -111,7 +110,7 @@ export default function Home() {
       <section className="pt-4 pb-28">
         <Container>
           <div className="glow-bg rounded-2xl border border-border bg-card/40 px-8 py-16">
-            <ContactBlock />
+            <ContactBlock showLocation={false} />
           </div>
         </Container>
       </section>

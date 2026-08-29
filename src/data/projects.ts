@@ -353,44 +353,44 @@ export const projects: Project[] = [
       "Organizations have huge amounts of sensor data but no way to make sense of it in real time. Every industry needs the same core capability — connect data, visualize it, act on it — but with completely different vocabularies and priorities. The challenge isn't just visualizing data; it's designing one system flexible enough to feel purpose-built for any industry.",
     industryStories: [
       {
-        name: "Road Traffic",
-        tag: "Infrastructure",
-        icon: "Car",
+        name: "Widgets",
+        tag: "Dashboard customization",
+        icon: "LayoutGrid",
         challenge:
-          "Cities manage traffic, emissions, and infrastructure data through fragmented, disconnected systems — reacting to congestion instead of predicting it.",
+          "Every user needs a different view of the data, but a fixed dashboard forces everyone to work with the same information.",
         approach:
-          "Designed a unified dashboard bringing vehicle counts, speed trends, emissions, and road condition into one live view with AI-driven predictions.",
+          "Designed flexible widgets that let users define exactly what they want to see on their dashboard based on their role, priorities, and needs.",
         url: "https://baiond.io/road-traffic/",
       },
       {
-        name: "Mangrove / Forest Planting",
-        tag: "Eco Projects",
-        icon: "Sprout",
+        name: "Automations",
+        tag: "Workflow automation",
+        icon: "Zap",
         challenge:
-          "Reforestation teams couldn't prove survival rates or growth — reporting was manual, inconsistent, and impossible to verify at scale.",
+          "Important events in a connected environment can be difficult to monitor continuously and act on manually.",
         approach:
-          "Designed a field-to-satellite workflow: log a planting event, then track it against vegetation, weather, and sensor data in one timeline.",
+          "Designed a flexible automation builder so users can create rules that connect triggers, conditions, and actions for their specific needs.",
         url: "https://baiond.io/mangrove-forest-planting/",
       },
       {
-        name: "Real Estate",
-        tag: "Green Building",
-        icon: "Building2",
+        name: "Sankey Chart Builder",
+        tag: "Data visualization",
+        icon: "Layers",
         challenge:
-          "Building owners lacked a real, data-backed view of how their portfolio was actually used — occupancy, energy, and sustainability data all lived in separate tools.",
+          "Complex flows and relationships were difficult to understand when represented as disconnected charts and tables.",
         approach:
-          "Designed portfolio dashboards and a natural-language 'ask AI about your building' interface for non-technical stakeholders.",
-        url: "https://baiond.io/real-estate/",
+          "Designed a Sankey chart builder that turns connected data into clear, interactive visual flows that users can explore and understand.",
+        url: "https://baiond.io/",
       },
       {
-        name: "Sport Facility",
-        tag: "Sport",
-        icon: "Dumbbell",
+        name: "Heatmap Builder",
+        tag: "Data visualization",
+        icon: "Layers",
         challenge:
-          "Sport facility operators had no real-time view of energy, air quality, or occupancy — making it hard to cut costs or meet sustainability certifications.",
+          "Patterns across time-based data were difficult to identify in tables and disconnected reports.",
         approach:
-          "Designed a single dashboard unifying energy, HVAC, water, and air-quality data per zone, with LEED/WELL certification reporting built in.",
-        url: "https://baiond.io/sportanlagen/",
+          "Designed a heatmap builder that makes activity levels and recurring patterns easy to scan, compare, and understand.",
+        url: "https://baiond.io/",
       },
     ],
     process: [],
@@ -401,16 +401,24 @@ export const projects: Project[] = [
     ],
     solution: [
       {
+        heading: "Dashboard Builder",
+        body: "Designed a visual dashboard builder that lets users arrange widgets, add charts, and compose a workspace tailored to the data they need to monitor.",
+      },
+      {
         heading: "The Space System",
         body: "Designed a universal, nestable hierarchy (e.g. city → district → object, or space → device → sensor) so any industry could model its world in the same interface, with devices, attributes, and automations attached at any level.",
       },
       {
-        heading: "One dashboard, many lenses",
-        body: "Designed a flexible Graph Builder and dashboard system so each customer could compose the exact views their role needed, instead of maintaining a separate custom UI per industry.",
+        heading: "Graph Builder",
+        body: "Designed a flexible Graph Builder that lets users create custom charts and dashboards from multiple data sources without coding. Users can compare time periods, uncover patterns, and turn complex data into actionable insights.",
       },
       {
-        heading: "Legible AI Agents",
-        body: "Designed the interface for AI Agents and automation rules so every autonomous action is traceable to the sensor values, thresholds, and logic that triggered it — making automation something users could audit and trust, not a black box.",
+        heading: "People Counter",
+        body: "Showcased a dashboard example for monitoring people counts in Vienna’s largest event space, giving venue teams a clear view of live occupancy and visitor flow.",
+      },
+      {
+        heading: "Tasks",
+        body: "Designed a task management experience that enables teams to create, prioritize, and monitor maintenance work for sensors, keeping responsibilities clear and equipment operating reliably.",
       },
     ],
     outcomes: [],

@@ -387,6 +387,25 @@ export default function AboutPage() {
 
       <Separator />
 
+      <Container className="max-w-[900px] py-20">
+        <div className="glow-bg flex flex-col items-center gap-6 rounded-2xl border border-border bg-card/40 px-8 py-16 text-center">
+          <h2 className="max-w-xl text-balance text-2xl font-medium tracking-tight sm:text-3xl">
+            Want to see the work behind the résumé?
+          </h2>
+          <Button
+            size="lg"
+            nativeButton={false}
+            render={
+              <Link href="/work">
+                View case studies <ArrowUpRight className="size-4" />
+              </Link>
+            }
+          />
+        </div>
+      </Container>
+
+      <Separator />
+
       {/* Currently reading */}
       <Container className="max-w-[900px] py-20">
         <h2 className="text-3xl font-medium tracking-tight sm:text-4xl">
@@ -443,24 +462,6 @@ export default function AboutPage() {
         </div>
       </Container>
 
-      <Separator />
-
-      <Container className="max-w-[900px] py-20">
-        <div className="glow-bg flex flex-col items-center gap-6 rounded-2xl border border-border bg-card/40 px-8 py-16 text-center">
-          <h2 className="max-w-xl text-balance text-2xl font-medium tracking-tight sm:text-3xl">
-            Want to see the work behind the résumé?
-          </h2>
-          <Button
-            size="lg"
-            nativeButton={false}
-            render={
-              <Link href="/work">
-                View case studies <ArrowUpRight className="size-4" />
-              </Link>
-            }
-          />
-        </div>
-      </Container>
     </>
   );
 }
