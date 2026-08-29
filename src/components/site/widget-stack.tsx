@@ -30,6 +30,7 @@ export function WidgetStack() {
           alt=""
           width={499}
           height={291}
+          loading="eager"
           className="widget-stack-item absolute left-0 w-full rounded-lg shadow-[0_12px_28px_rgba(0,0,0,0.45)] transition-[top,opacity,scale] duration-700 ease-in-out"
           style={{
             top: `${index * 20}px`,
