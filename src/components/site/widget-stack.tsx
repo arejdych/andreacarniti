@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { assetPath } from "@/lib/asset-path";
 import { useEffect, useState } from "react";
 
 const widgets = ["Widget.png", "Widget-1.png", "Widget-2.png"];
@@ -25,7 +26,7 @@ export function WidgetStack() {
       {changingWidgets.map((widget, index) => (
         <Image
           key={widget}
-          src={`/images/baiond/widgets/${widget}`}
+          src={assetPath(`/images/baiond/widgets/${widget}`)}
           alt=""
           width={499}
           height={291}

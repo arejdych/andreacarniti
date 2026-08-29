@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { assetPath } from "@/lib/asset-path";
 import { useState } from "react";
 
 const graphs = [
@@ -31,7 +32,7 @@ export function GraphMarquee() {
         {[...graphs, ...graphs].map((graph, index) => (
           <Image
             key={`${graph}-${index}`}
-            src={`/images/baiond/graphs/${graph}`}
+            src={assetPath(`/images/baiond/graphs/${graph}`)}
             alt=""
             width={458}
             height={146}

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { assetPath } from "@/lib/asset-path";
 
 type Screen = {
   src: string;
@@ -12,13 +13,13 @@ type Screen = {
 
 const defaultScreens: Screen[] = [
   {
-    src: "/images/cheerin/map.png",
+    src: assetPath("/images/cheerin/map.png"),
     alt: "Cheerin activity map",
     width: 2711,
     height: 5646,
   },
   {
-    src: "/images/cheerin/contact.png",
+    src: assetPath("/images/cheerin/contact.png"),
     alt: "Cheerin friend discovery profile",
     width: 904,
     height: 1882,

@@ -2,19 +2,20 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { assetPath } from "@/lib/asset-path";
 
 const integrations = [
-  { name: "Apple Health", src: "/images/cheerin/integrations/apple.svg" },
-  { name: "Apple HealthKit", src: "/images/cheerin/integrations/apple.svg" },
-  { name: "Strava", src: "/images/cheerin/integrations/strava.svg" },
-  { name: "Fitbit", src: "/images/cheerin/integrations/fitbit.svg" },
-  { name: "Garmin", src: "/images/cheerin/integrations/garmin.svg" },
-  { name: "Oura", src: "/images/cheerin/integrations/oura.png" },
-  { name: "Wahoo", src: "/images/cheerin/integrations/wahoo.png" },
-  { name: "Withings", src: "/images/cheerin/integrations/withings.png" },
+  { name: "Apple Health", src: assetPath("/images/cheerin/integrations/apple.svg") },
+  { name: "Apple HealthKit", src: assetPath("/images/cheerin/integrations/apple.svg") },
+  { name: "Strava", src: assetPath("/images/cheerin/integrations/strava.svg") },
+  { name: "Fitbit", src: assetPath("/images/cheerin/integrations/fitbit.svg") },
+  { name: "Garmin", src: assetPath("/images/cheerin/integrations/garmin.svg") },
+  { name: "Oura", src: assetPath("/images/cheerin/integrations/oura.png") },
+  { name: "Wahoo", src: assetPath("/images/cheerin/integrations/wahoo.png") },
+  { name: "Withings", src: assetPath("/images/cheerin/integrations/withings.png") },
   {
     name: "Health Connect",
-    src: "/images/cheerin/integrations/health-connect.png",
+    src: assetPath("/images/cheerin/integrations/health-connect.png"),
   },
 ];
 

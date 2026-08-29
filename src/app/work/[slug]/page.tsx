@@ -55,6 +55,7 @@ import { GraphMarquee } from "@/components/site/graph-marquee";
 import { WidgetStack } from "@/components/site/widget-stack";
 import { CheerinDetail } from "@/components/site/cheerin-detail";
 import { CopyEmailButton } from "@/app/contact/copy-email-button";
+import { assetPath } from "@/lib/asset-path";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -192,10 +193,10 @@ export default async function ProjectPage({
           {project.slug === "baiond-iot-sustainability-platform" ? (
             <CoverIllustration
               className="h-full w-full"
-              imageSrc="/images/baiond/main-image.png"
+              imageSrc={assetPath("/images/baiond/main-image.png")}
               imageAlt="Baiond dashboard overview"
               imageHeight={1117}
-              secondaryImageSrc="/images/baiond/dashboard-mobile.png"
+              secondaryImageSrc={assetPath("/images/baiond/dashboard-mobile.png")}
               secondaryImageAlt="Baiond mobile dashboard"
             />
           ) : (
@@ -600,7 +601,7 @@ export default async function ProjectPage({
                   s.heading === "The Space System" ? (
                     <CoverIllustration
                       className="h-full w-full"
-                      imageSrc="/images/baiond/weather-station.png"
+                      imageSrc={assetPath("/images/baiond/weather-station.png")}
                       imageAlt="Baiond weather station dashboard"
                       imageFit="cover"
                       imageHeight={1383}
@@ -609,7 +610,7 @@ export default async function ProjectPage({
                     s.heading === "Graph Builder" ? (
                     <CoverIllustration
                       className="h-full w-full"
-                      imageSrc="/images/baiond/chart-builder.png"
+                      imageSrc={assetPath("/images/baiond/chart-builder.png")}
                       imageAlt="Baiond chart builder dashboard"
                       imageFit="contain"
                       imageHeight={1117}
@@ -617,7 +618,7 @@ export default async function ProjectPage({
                   ) : project.slug === "baiond-iot-sustainability-platform" &&
                     s.heading === "Dashboard Builder" ? (
                     <CoverIllustration
-                      imageSrc="/images/baiond/dashboard-builder.png"
+                      imageSrc={assetPath("/images/baiond/dashboard-builder.png")}
                       imageAlt="Baiond dashboard builder"
                       imageFit="contain"
                       imageWidth={2000}
@@ -629,7 +630,7 @@ export default async function ProjectPage({
                     s.heading === "Tasks" ? (
                     <CoverIllustration
                       className="h-full w-full"
-                      imageSrc="/images/baiond/tasks.png"
+                      imageSrc={assetPath("/images/baiond/tasks.png")}
                       imageAlt="Baiond task management dashboard"
                       imageFit="contain"
                       imageWidth={1740}
@@ -639,7 +640,7 @@ export default async function ProjectPage({
                     s.heading === "People Counter" ? (
                     <CoverIllustration
                       className="h-full w-full"
-                      imageSrc="/images/baiond/people-counter.png"
+                      imageSrc={assetPath("/images/baiond/people-counter.png")}
                       imageAlt="Baiond people counter dashboard"
                       imageFit="cover"
                       imageWidth={1728}
@@ -725,7 +726,7 @@ export default async function ProjectPage({
                         <WidgetStack />
                       ) : story.name === "Automations" ? (
                         <Image
-                          src="/images/baiond/automation.png"
+                          src={assetPath("/images/baiond/automation.png")}
                           alt="Baiond automation builder"
                           width={300}
                           height={370}
@@ -733,7 +734,7 @@ export default async function ProjectPage({
                         />
                       ) : story.name === "Sankey Chart Builder" ? (
                         <Image
-                          src="/images/baiond/sankey.png"
+                          src={assetPath("/images/baiond/sankey.png")}
                           alt="Baiond Sankey chart builder"
                           width={1366}
                           height={578}
@@ -741,7 +742,7 @@ export default async function ProjectPage({
                         />
                       ) : story.name === "Heatmap Builder" ? (
                         <Image
-                          src="/images/baiond/heatmap.png"
+                          src={assetPath("/images/baiond/heatmap.png")}
                           alt="Baiond heatmap builder"
                           width={1280}
                           height={640}
@@ -839,7 +840,7 @@ export default async function ProjectPage({
               {project.logos.map((logo) => {
                 const img = (
                   <Image
-                    src={logo.src}
+                    src={assetPath(logo.src)}
                     alt={logo.name}
                     width={210}
                     height={84}

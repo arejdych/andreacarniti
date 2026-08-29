@@ -9,6 +9,7 @@ import { ProjectCard } from "@/components/site/project-card";
 import { Separator } from "@/components/ui/separator";
 import { projects } from "@/data/projects";
 import { CopyEmailButton } from "@/app/contact/copy-email-button";
+import { assetPath } from "@/lib/asset-path";
 import { CheerinSportCarousel } from "@/components/site/cheerin-sport-carousel";
 
 const sections: {
@@ -26,14 +27,14 @@ const sections: {
     heading: "Get better together",
     description:
       "The social experience helps friends motivate and support one another, plan activities together, deepen their friendships, and send live encouragement when someone is active.",
-    imageSrc: "/images/cheerin/tracking.png",
+    imageSrc: assetPath("/images/cheerin/tracking.png"),
     imageAlt: "Cheerin cycling activity tracking screen",
   },
   {
     heading: "Find new friends to train with",
     description:
       "Discover like-minded people nearby through shared activities and interests, then connect with friends who make it easier to stay motivated and try something new.",
-    imageSrc: "/images/cheerin/contact.png",
+    imageSrc: assetPath("/images/cheerin/contact.png"),
     imageAlt: "Cheerin friend discovery profile",
   },
 ];
@@ -126,7 +127,7 @@ export function CheerinDetail() {
         </p>
         <div className="cheerin-hero relative mt-14 h-[700px] overflow-visible rounded-xl border border-white/45 bg-[linear-gradient(to_bottom,#ff7469,#f22919)] shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_18px_50px_rgba(148,20,12,0.22)]">
           <Image
-            src="/images/cheerin/hero.png"
+            src={assetPath("/images/cheerin/hero.png")}
             alt="Cheerin mobile app screens"
             width={1141}
             height={1160}
@@ -182,13 +183,13 @@ export function CheerinDetail() {
                 <CheerinScreenCycle
                   screens={[
                     {
-                      src: "/images/cheerin/tracking.png",
+                      src: assetPath("/images/cheerin/tracking.png"),
                       alt: "Cheerin activity tracking screen",
                       width: 904,
                       height: 1882,
                     },
                     {
-                      src: "/images/cheerin/cheer.png",
+                      src: assetPath("/images/cheerin/cheer.png"),
                       alt: "Cheerin social cheering screen",
                       width: 904,
                       height: 1882,
