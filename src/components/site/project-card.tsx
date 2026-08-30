@@ -76,6 +76,14 @@ function ProjectThumbnail({ project }: { project: Project }) {
     );
   }
 
+  if (project.slug === "gustaffo-hotel-concierge") {
+    return (
+      <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-xl border border-white/10 bg-[linear-gradient(to_bottom,#111015,#08070a)]">
+        <span className="relative z-10 text-sm font-mono uppercase tracking-widest text-white/40">Coming soon</span>
+      </div>
+    );
+  }
+
   return (
     <ImageBlock
       tone={project.cover}
@@ -85,6 +93,34 @@ function ProjectThumbnail({ project }: { project: Project }) {
 }
 
 export function ProjectCard({ project }: { project: Project }) {
+  const isComingSoon = project.slug === "gustaffo-hotel-concierge";
+
+  if (isComingSoon) {
+    return (
+      <div className="block rounded-xl cursor-default opacity-60">
+        <AspectRatio ratio={4 / 3}>
+          <ProjectThumbnail project={project} />
+        </AspectRatio>
+        <div className="mt-4 flex items-start justify-between gap-4">
+          <div>
+            <h3 className="text-lg font-medium tracking-tight">
+              {project.title}
+            </h3>
+            <p className="mt-1 text-sm text-muted-foreground">
+              {project.tagline}
+            </p>
+          </div>
+          <span className="whitespace-nowrap pt-1 font-mono text-xs text-muted-foreground">
+            {project.year || project.duration}
+          </span>
+        </div>
+        <p className="mt-2 font-mono text-xs uppercase tracking-wide text-muted-foreground">
+          {project.category}
+        </p>
+      </div>
+    );
+  }
+
   return (
     <Link
       href={`/work/${project.slug}`}
