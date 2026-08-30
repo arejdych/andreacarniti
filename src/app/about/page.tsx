@@ -174,11 +174,11 @@ export default function AboutPage() {
           <PhotoCarousel
             slides={[
               {
-                src: `${process.env.GITHUB_PAGES === "true" ? "/andreacarniti" : ""}/images/andrea.jpg`,
+                src: `${process.env.NEXT_PUBLIC_GITHUB_PAGES === "true" ? "/portfolio" : ""}/images/andrea.jpg`,
                 alt: "Andrea Carniti",
               },
               {
-                src: `${process.env.GITHUB_PAGES === "true" ? "/andreacarniti" : ""}/images/andrea-fun.png`,
+                src: `${process.env.NEXT_PUBLIC_GITHUB_PAGES === "true" ? "/portfolio" : ""}/images/andrea-fun.png`,
                 alt: "Andrea Carniti on the Cheerin' team",
               },
             ]}
@@ -235,7 +235,7 @@ export default function AboutPage() {
               nativeButton={false}
               render={
                 <a
-                  href={`${process.env.GITHUB_PAGES === "true" ? "/andreacarniti" : ""}/andrea-carniti-resume.pdf`}
+                  href={`${process.env.NEXT_PUBLIC_GITHUB_PAGES === "true" ? "/portfolio" : ""}/andrea-carniti-resume.pdf`}
                   download
                 >
                   Download résumé

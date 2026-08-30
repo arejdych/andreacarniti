@@ -1,3 +1,3 @@
 export function assetPath(path: string) {
-  return `${process.env.GITHUB_PAGES === "true" ? "/portfolio" : ""}${path}`;
+  return `${process.env.NEXT_PUBLIC_GITHUB_PAGES === "true" ? "/portfolio" : ""}${path}`;
 }
