@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Building2 } from "lucide-react";
 import { Project } from "@/data/projects";
 import { ImageBlock } from "@/components/site/image-block";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -49,7 +49,10 @@ function ProjectThumbnail({ project }: { project: Project }) {
           <p>0010 1101&nbsp;1001 0011</p>
           <p>&nbsp;&nbsp;&nbsp;0101 1010 1011&nbsp;0001</p>
         </div>
-        <span className="relative z-10 text-2xl font-medium tracking-tight text-white">Tenant Portal</span>
+        <div className="relative z-10 flex flex-col items-center gap-3">
+          <Building2 className="size-8 text-white/70" strokeWidth={1.2} />
+          <span className="font-[var(--font-display)] text-2xl font-semibold tracking-tight text-white">Tenant Portal</span>
+        </div>
       </div>
     );
   }
