@@ -54,6 +54,7 @@ import { CoverIllustration } from "@/components/site/cover-illustration";
 import { GraphMarquee } from "@/components/site/graph-marquee";
 import { WidgetStack } from "@/components/site/widget-stack";
 import { CheerinDetail } from "@/components/site/cheerin-detail";
+import { ComgyDetail } from "@/components/site/comgy-detail";
 import { CopyEmailButton } from "@/app/contact/copy-email-button";
 import { assetPath } from "@/lib/asset-path";
 
@@ -130,6 +131,10 @@ export default async function ProjectPage({
 
   if (project.slug === "cheerin-app") {
     return <CheerinDetail />;
+  }
+
+  if (project.slug === "comgy-energy-platform") {
+    return <ComgyDetail />;
   }
 
   return (

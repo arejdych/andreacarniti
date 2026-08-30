@@ -12,12 +12,13 @@ export function SiteFooter() {
     "/work/baiond-iot-sustainability-platform"
   );
   const isCheerin = pathname?.startsWith("/work/cheerin-app");
+  const isComgy = pathname?.startsWith("/work/comgy-energy-platform");
 
   return (
     <footer
       className={`border-t border-border bg-background ${
         isBaiond ? "baiond-navigation" : ""
-      } ${isCheerin ? "cheerin-navigation" : ""}`}
+      } ${isCheerin ? "cheerin-navigation" : ""} ${isComgy ? "comgy-navigation" : ""}`}
     >
       <Container className="flex flex-col gap-6 py-10 md:flex-row md:items-center md:justify-between">
         <div>

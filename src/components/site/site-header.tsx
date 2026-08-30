@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { Container } from "@/components/site/container";
 import { cn } from "@/lib/utils";
 
 const links = [
@@ -21,6 +20,7 @@ export function SiteHeader() {
     "/work/baiond-iot-sustainability-platform"
   );
   const isCheerin = pathname?.startsWith("/work/cheerin-app");
+  const isComgy = pathname?.startsWith("/work/comgy-energy-platform");
 
   useEffect(() => {
     function handleScroll() {
@@ -35,29 +35,32 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 border-b border-border backdrop-blur-md supports-[backdrop-filter]:bg-background/60",
-        isCheerin
-          ? isScrolled
-            ? "bg-[#fff4f3]/75 supports-[backdrop-filter]:bg-[#fff4f3]/65"
-            : "bg-[#fff4f3] supports-[backdrop-filter]:bg-[#fff4f3]"
-          : "bg-background/70",
+        "fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-4",
         isBaiond && "baiond-navigation",
-        isCheerin && "cheerin-navigation"
+        isCheerin && "cheerin-navigation",
+        isComgy && "comgy-navigation"
       )}
     >
-      <Container className="flex h-[77px] items-center justify-between">
+      <nav
+        className={cn(
+          "flex w-full max-w-[800px] items-center justify-between rounded-full border px-6 py-3 backdrop-blur-xl transition-all duration-300",
+          isCheerin || isComgy
+            ? "border-black/10 bg-white/60"
+            : "border-white/[0.12] bg-white/[0.02]"
+        )}
+      >
         <Link
           href="/"
           className={cn(
-            "flex items-center gap-2 font-sans text-[17px] font-semibold tracking-tight",
-            isCheerin && "text-foreground"
+            "font-sans text-[17px] font-semibold tracking-tight",
+            isCheerin ? "text-foreground" : "text-foreground"
           )}
           onClick={() => setOpen(false)}
         >
           Andrea Carniti
         </Link>
 
-        <nav className="hidden items-center gap-1 md:flex">
+        <div className="hidden items-center gap-1 md:flex">
           {links.map((link) => {
             const active =
               pathname === link.href || pathname?.startsWith(link.href + "/");
@@ -66,45 +69,45 @@ export function SiteHeader() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "flex h-[39px] items-center justify-center rounded-full px-[14px] text-[16px] transition-colors duration-150 ease-out hover:bg-white/[0.08] hover:text-foreground",
-                  isCheerin
+                  "flex h-[36px] items-center justify-center rounded-full px-4 text-[15px] transition-colors duration-150 ease-out",
+                  isCheerin || isComgy
                     ? active
-                      ? "text-foreground hover:bg-[#fce3e4]"
-                      : "text-muted-foreground hover:bg-[#fce3e4]"
+                      ? "text-foreground hover:bg-black/5"
+                      : "text-muted-foreground hover:bg-black/5 hover:text-foreground"
                     : active
-                      ? "text-foreground"
-                      : "text-muted-foreground"
+                      ? "text-foreground hover:bg-white/[0.08]"
+                      : "text-muted-foreground hover:bg-white/[0.08] hover:text-foreground"
                 )}
               >
                 {link.label}
               </Link>
             );
           })}
-        </nav>
+        </div>
 
         <button
           className="md:hidden"
           aria-label="Toggle menu"
           onClick={() => setOpen((o) => !o)}
         >
-          {open ? <X className="size-6" /> : <Menu className="size-6" />}
+          {open ? <X className="size-5" /> : <Menu className="size-5" />}
         </button>
-      </Container>
+      </nav>
 
       {open && (
-        <div className="border-t border-border md:hidden">
-          <Container className="flex flex-col gap-1 py-4">
+        <div className="absolute top-full left-4 right-4 mt-2 flex justify-center md:hidden">
+          <div className="w-full max-w-[800px] rounded-2xl border border-white/[0.12] bg-background/95 backdrop-blur-xl p-3">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="rounded-md px-2 py-2 text-sm text-muted-foreground hover:bg-accent hover:text-foreground"
+                className="block rounded-xl px-4 py-3 text-sm text-muted-foreground hover:bg-white/[0.06] hover:text-foreground"
               >
                 {link.label}
               </Link>
             ))}
-          </Container>
+          </div>
         </div>
       )}
     </header>

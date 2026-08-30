@@ -13,8 +13,8 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="glow-bg relative overflow-hidden border-b border-border">
-        <Container className="flex min-h-[75vh] flex-col items-center justify-center py-24 text-center">
+      <section className="glow-bg relative overflow-hidden border-b border-border -mt-[72px] pt-[72px]">
+        <Container className="max-w-[1100px] flex min-h-[75vh] flex-col items-center justify-center py-24 text-center">
           <h1 className="blur-in mt-8 w-full max-w-3xl text-balance text-[57.6px] font-bold leading-[1.05] tracking-tight [animation-delay:0ms] [animation-duration:3000ms] sm:text-[86.4px]">
             <RotatingTagline />
           </h1>
@@ -45,7 +45,7 @@ export default function Home() {
 
       {/* Selected work */}
       <section className="py-28">
-        <Container>
+        <Container className="max-w-[1100px]">
           <div className="mb-14 flex items-end justify-between gap-4">
             <div>
               <p className="font-mono text-sm text-muted-foreground">
@@ -72,8 +72,8 @@ export default function Home() {
       </section>
 
       {/* About teaser */}
-      <section className="py-20">
-        <Container>
+      <section className="pt-0 pb-20">
+        <Container className="max-w-[1100px]">
           <div className="grid gap-10 border-y border-border py-12 md:grid-cols-[1fr_1.5fr] md:gap-20 md:py-16">
             <div className="flex items-start">
               <h2 className="text-2xl font-medium tracking-tight sm:text-3xl">
@@ -108,7 +108,7 @@ export default function Home() {
 
       {/* Contact */}
       <section className="pt-4 pb-28">
-        <Container>
+        <Container className="max-w-[1100px]">
           <div className="glow-bg rounded-2xl border border-border bg-card/40 px-8 py-16">
             <ContactBlock showLocation={false} />
           </div>

@@ -35,7 +35,7 @@ const experience = [
   {
     period: "2021 — 2022",
     role: "UX Designer",
-    org: "Energy Efficiency Directive solution",
+    org: "Tenant Portal",
     location: "Vienna, Austria",
     description:
       "Redesigned the core monitoring dashboard for a building-energy platform, conducting contextual research with facility managers and collaborating with a product manager and two engineers on delivery.",
@@ -169,7 +169,7 @@ const languages = [
 export default function AboutPage() {
   return (
     <>
-      <Container className="max-w-[900px] grid gap-12 py-20 md:grid-cols-[240px_1fr] md:gap-16">
+      <Container className="max-w-[900px] grid gap-12 pt-[80px] pb-20 md:grid-cols-[240px_1fr] md:gap-16">
         <div className="w-[240px]">
           <PhotoCarousel
             slides={[
