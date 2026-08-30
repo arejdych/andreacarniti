@@ -1,7 +1,7 @@
 "use client";
 
 import { assetPath } from "@/lib/asset-path";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const graphs = [
   "Widget.png",
@@ -15,8 +15,17 @@ const graphs = [
   "Widget-8.png",
 ];
 
+const graphSrcs = graphs.map((g) => assetPath(`/images/baiond/graphs/${g}`));
+
 export function GraphMarquee() {
   const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    graphSrcs.forEach((src) => {
+      const img = new window.Image();
+      img.src = src;
+    });
+  }, []);
 
   return (
     <div
@@ -28,11 +37,11 @@ export function GraphMarquee() {
         className="graph-marquee-track flex w-max gap-5"
         style={{ animationPlayState: isPaused ? "paused" : "running" }}
       >
-        {[...graphs, ...graphs].map((graph, index) => (
+        {[...graphSrcs, ...graphSrcs].map((src, index) => (
           /* eslint-disable-next-line @next/next/no-img-element */
           <img
-            key={`${graph}-${index}`}
-            src={assetPath(`/images/baiond/graphs/${graph}`)}
+            key={`${src}-${index}`}
+            src={src}
             alt=""
             width={458}
             height={146}
