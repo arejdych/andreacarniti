@@ -43,6 +43,7 @@ export function IntegrationMarquee() {
                 alt={group === 0 ? integration.name : ""}
                 width={64}
                 height={64}
+                priority
                 className="size-16 shrink-0 rounded-2xl object-contain"
               />
             ))}
