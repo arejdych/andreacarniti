@@ -730,7 +730,8 @@ export default async function ProjectPage({
                       {story.name === "Widgets" ? (
                         <WidgetStack />
                       ) : story.name === "Automations" ? (
-                        <Image
+                        /* eslint-disable-next-line @next/next/no-img-element */
+                        <img
                           src={assetPath("/images/baiond/automation.png")}
                           alt="Baiond automation builder"
                           width={300}
@@ -738,7 +739,8 @@ export default async function ProjectPage({
                           className="mx-auto h-full w-auto -translate-y-4 scale-[0.8] object-contain"
                         />
                       ) : story.name === "Sankey Chart Builder" ? (
-                        <Image
+                        /* eslint-disable-next-line @next/next/no-img-element */
+                        <img
                           src={assetPath("/images/baiond/sankey.png")}
                           alt="Baiond Sankey chart builder"
                           width={1366}
@@ -746,7 +748,8 @@ export default async function ProjectPage({
                           className="h-full w-full scale-[0.8] object-contain opacity-50"
                         />
                       ) : story.name === "Heatmap Builder" ? (
-                        <Image
+                        /* eslint-disable-next-line @next/next/no-img-element */
+                        <img
                           src={assetPath("/images/baiond/heatmap.png")}
                           alt="Baiond heatmap builder"
                           width={1280}
