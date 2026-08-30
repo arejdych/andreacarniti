@@ -5,6 +5,7 @@ import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { PasswordGate } from "@/components/site/password-gate";
 
 // Linear uses "Inter Variable" for UI/body text and the commercial
 // "Berkeley Mono" for monospace. Berkeley Mono isn't freely licensable,
@@ -38,12 +39,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`dark ${inter.variable} ${geistMono.variable} ${dmSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        <TooltipProvider>
-          <SiteHeader />
-          <main className="flex-1 pt-[72px]">{children}</main>
-          <SiteFooter />
-        </TooltipProvider>
-        <Toaster />
+        <PasswordGate>
+          <TooltipProvider>
+            <SiteHeader />
+            <main className="flex-1 pt-[72px]">{children}</main>
+            <SiteFooter />
+          </TooltipProvider>
+          <Toaster />
+        </PasswordGate>
       </body>
     </html>
   );
