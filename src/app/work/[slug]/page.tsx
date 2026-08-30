@@ -141,7 +141,7 @@ export default async function ProjectPage({
     <article
       className={
         project.slug === "baiond-iot-sustainability-platform"
-          ? "baiond-page min-h-screen bg-background"
+          ? "baiond-page min-h-screen bg-background -mt-[72px] pt-[72px]"
           : project.slug === "cheerin-app"
             ? "cheerin-page min-h-screen bg-background"
           : undefined
