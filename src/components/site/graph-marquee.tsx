@@ -37,7 +37,7 @@ export function GraphMarquee() {
             width={458}
             height={146}
             loading="eager"
-            className="h-[146px] w-[458px] shrink-0 rounded-xl bg-card object-cover opacity-70 shadow-[0_16px_40px_rgba(0,0,0,0.3)] transition duration-300 hover:scale-105 hover:opacity-100 hover:ring-2 hover:ring-foreground/40 hover:shadow-[0_20px_48px_rgba(0,0,0,0.5)]"
+            className="h-[146px] w-[458px] shrink-0 rounded-xl bg-card object-cover shadow-[0_16px_40px_rgba(0,0,0,0.3)] transition duration-300 hover:scale-105 hover:ring-2 hover:ring-foreground/40 hover:shadow-[0_20px_48px_rgba(0,0,0,0.5)]"
             aria-hidden="true"
           />
         ))}

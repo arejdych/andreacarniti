@@ -5,18 +5,16 @@ import { useState } from "react";
 import { assetPath } from "@/lib/asset-path";
 
 const integrations = [
-  { name: "Apple Health", src: assetPath("/images/cheerin/integrations/apple.svg") },
-  { name: "Apple HealthKit", src: assetPath("/images/cheerin/integrations/apple.svg") },
+  { name: "Apple Health", src: assetPath("/images/cheerin/integrations/apple-health.svg") },
+  { name: "Apple Fitness", src: assetPath("/images/cheerin/integrations/apple-fitness.png") },
   { name: "Strava", src: assetPath("/images/cheerin/integrations/strava.svg") },
   { name: "Fitbit", src: assetPath("/images/cheerin/integrations/fitbit.svg") },
-  { name: "Garmin", src: assetPath("/images/cheerin/integrations/garmin.svg") },
-  { name: "Oura", src: assetPath("/images/cheerin/integrations/oura.png") },
-  { name: "Wahoo", src: assetPath("/images/cheerin/integrations/wahoo.png") },
-  { name: "Withings", src: assetPath("/images/cheerin/integrations/withings.png") },
-  {
-    name: "Health Connect",
-    src: assetPath("/images/cheerin/integrations/health-connect.png"),
-  },
+  { name: "Garmin Connect", src: assetPath("/images/cheerin/integrations/garmin.svg") },
+  { name: "Google Fit", src: assetPath("/images/cheerin/integrations/google-fit.svg") },
+  { name: "Headspace", src: assetPath("/images/cheerin/integrations/headspace.svg") },
+  { name: "Health Connect", src: assetPath("/images/cheerin/integrations/health-connect.svg") },
+  { name: "Under Armour", src: assetPath("/images/cheerin/integrations/under-armour.avif") },
+  { name: "Runna", src: assetPath("/images/cheerin/integrations/runna.webp") },
 ];
 
 export function IntegrationMarquee() {

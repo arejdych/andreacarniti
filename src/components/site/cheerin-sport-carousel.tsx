@@ -26,7 +26,7 @@ export function CheerinSportCarousel() {
                 alt={name}
                 width={300}
                 height={300}
-                className="size-[300px] shrink-0 rounded-xl object-cover brightness-110 saturate-110"
+                className="size-[300px] shrink-0 object-cover brightness-110 saturate-110"
               />
             ))}
           </div>

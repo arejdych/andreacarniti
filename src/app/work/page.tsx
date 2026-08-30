@@ -10,18 +10,13 @@ export const metadata: Metadata = {
 
 export default function WorkPage() {
   return (
-    <Container className="py-24">
+    <Container className="max-w-[1100px] py-24">
       <p className="blur-in font-mono text-sm text-muted-foreground [animation-delay:0ms]">
         Work
       </p>
       <h1 className="blur-in mt-2 max-w-2xl text-balance text-3xl font-medium tracking-tight [animation-delay:180ms] sm:text-4xl">
-        Case studies from fintech, SaaS, and consumer products.
+        Case studies from IoT, energy, sport, and hospitality.
       </h1>
-      <p className="blur-in mt-4 max-w-xl text-muted-foreground [animation-delay:360ms]">
-        Each project below covers the problem, my process, the shipped
-        solution, and what actually happened after launch.
-      </p>
-
       <div className="mt-16 grid gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
           <ProjectCard key={project.slug} project={project} />

@@ -78,7 +78,8 @@ const otherProjects = projects
 
 export function CheerinDetail() {
   return (
-    <article className="cheerin-page min-h-screen bg-background">
+    <article className="cheerin-page min-h-screen bg-[#fff4f3] -mt-[72px] pt-[72px]">
+      <style>{`html, body { background-color: #fff4f3 !important; }`}</style>
       <Container className="py-16">
         <Link
           href="/work"
@@ -127,10 +128,17 @@ export function CheerinDetail() {
         </p>
         <div className="cheerin-hero relative mt-14 h-[700px] overflow-visible rounded-xl border border-white/45 bg-[linear-gradient(to_bottom,#ff7469,#f22919)] shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_18px_50px_rgba(148,20,12,0.22)]">
           <Image
-            src={assetPath("/images/cheerin/hero.png")}
+            src={assetPath("/images/cheerin/logo.png")}
+            alt="Cheerin logo"
+            width={320}
+            height={156}
+            className="absolute bottom-6 left-6 z-20 w-[180px] h-auto"
+          />
+          <Image
+            src={assetPath("/images/cheerin/main.png")}
             alt="Cheerin mobile app screens"
-            width={1141}
-            height={1160}
+            width={2949}
+            height={2036}
             className="absolute bottom-[-10%] left-1/2 z-10 h-[104%] w-auto max-w-none -translate-x-1/2 object-contain"
             priority
           />
@@ -191,6 +199,35 @@ export function CheerinDetail() {
                     {
                       src: assetPath("/images/cheerin/cheer.png"),
                       alt: "Cheerin social cheering screen",
+                      width: 904,
+                      height: 1882,
+                    },
+                    {
+                      src: assetPath("/images/cheerin/share.png"),
+                      alt: "Cheerin activity sharing screen",
+                      width: 904,
+                      height: 1882,
+                    },
+                  ]}
+                />
+              ) : section.heading === "Get better together" ? (
+                <CheerinScreenCycle
+                  screens={[
+                    {
+                      src: assetPath("/images/cheerin/screen-feed.png"),
+                      alt: "Cheerin social feed screen",
+                      width: 884,
+                      height: 1860,
+                    },
+                    {
+                      src: assetPath("/images/cheerin/coordinate.png"),
+                      alt: "Cheerin activity coordination screen",
+                      width: 904,
+                      height: 1882,
+                    },
+                    {
+                      src: assetPath("/images/cheerin/feed.png"),
+                      alt: "Cheerin friends feed screen",
                       width: 904,
                       height: 1882,
                     },
