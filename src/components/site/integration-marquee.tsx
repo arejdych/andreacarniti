@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import { assetPath } from "@/lib/asset-path";
 
@@ -37,13 +36,13 @@ export function IntegrationMarquee() {
             aria-hidden={group !== 0}
           >
             {integrations.map((integration) => (
-              <Image
+              /* eslint-disable-next-line @next/next/no-img-element */
+              <img
                 key={`${group}-${integration.name}`}
                 src={integration.src}
                 alt={group === 0 ? integration.name : ""}
                 width={64}
                 height={64}
-                priority
                 className="size-16 shrink-0 rounded-2xl object-contain"
               />
             ))}

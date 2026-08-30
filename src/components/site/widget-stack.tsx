@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { assetPath } from "@/lib/asset-path";
 import { useEffect, useState } from "react";
 
@@ -24,13 +23,13 @@ export function WidgetStack() {
   return (
     <div className="relative mx-auto aspect-[499/331] w-full max-w-[499px] overflow-hidden rounded-xl">
       {changingWidgets.map((widget, index) => (
-        <Image
+        /* eslint-disable-next-line @next/next/no-img-element */
+        <img
           key={widget}
           src={assetPath(`/images/baiond/widgets/${widget}`)}
           alt=""
           width={499}
           height={291}
-          priority
           className="widget-stack-item absolute left-0 w-full rounded-lg shadow-[0_12px_28px_rgba(0,0,0,0.45)] transition-[top,opacity,scale] duration-700 ease-in-out"
           style={{
             top: `${index * 20}px`,
